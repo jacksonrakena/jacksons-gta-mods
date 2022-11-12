@@ -1,0 +1,20 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.1</TargetFramework>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="ref\**" />
+    <EmbeddedResource Remove="ref\**" />
+    <None Remove="ref\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="ScriptHookVDotNet3">
+      <HintPath>ref\ScriptHookVDotNet3.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+
+</Project>

@@ -1,0 +1,40 @@
+{
+  "runtimeTarget": {
+    "name": ".NETStandard,Version=v2.1/",
+    "signature": ""
+  },
+  "compilationOptions": {},
+  "targets": {
+    ".NETStandard,Version=v2.1": {},
+    ".NETStandard,Version=v2.1/": {
+      "ModCommon/1.0.0": {
+        "dependencies": {
+          "ScriptHookVDotNet3": "3.0.2.0"
+        },
+        "runtime": {
+          "ModCommon.dll": {}
+        }
+      },
+      "ScriptHookVDotNet3/3.0.2.0": {
+        "runtime": {
+          "ScriptHookVDotNet3.dll": {
+            "assemblyVersion": "3.0.2.0",
+            "fileVersion": "3.0.2.0"
+          }
+        }
+      }
+    }
+  },
+  "libraries": {
+    "ModCommon/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "ScriptHookVDotNet3/3.0.2.0": {
+      "type": "reference",
+      "serviceable": false,
+      "sha512": ""
+    }
+  }
+}

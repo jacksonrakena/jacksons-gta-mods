@@ -1,0 +1,142 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <Target Name="AfterBuild">
+    <!-- <Exec Command="D:\Code\DarkViperOhko\packages\ILMerge.3.0.29\tools\net452\ILMerge.exe out:ohko.dll bin\Debug\INIFileParser.dll bin\Debug\DarkViperOhko.dll" /> -->
+  </Target>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{E2610B9D-289E-46C9-8B9F-E6D6D3241942}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>InputDetect</RootNamespace>
+    <AssemblyName>InputDetect</AssemblyName>
+    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+    <NuGetPackageImportStamp></NuGetPackageImportStamp>
+    <LangVersion>8</LangVersion>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <RunPostBuildEvent>Always</RunPostBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PublishSingleFile />
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ScriptHookVDotNet3, Version=3.0.2.0, Culture=neutral, processorArchitecture=AMD64">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>ref\ScriptHookVDotNet3.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.Composition" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.IO.Compression.FileSystem" />
+    <Reference Include="System.Numerics" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="StatisticsDisplay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="StatisticsDisplay.Designer.cs">
+      <DependentUpon>StatisticsDisplay.cs</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
+    <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
+    <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
+    <PackageReference Include="System.AppContext" Version="4.3.0" />
+    <PackageReference Include="System.Buffers" Version="4.4.0" />
+    <PackageReference Include="System.Collections" Version="4.3.0" />
+    <PackageReference Include="System.Collections.Concurrent" Version="4.3.0" />
+    <PackageReference Include="System.Console" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Debug" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.DiagnosticSource" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Tools" Version="4.3.0" />
+    <PackageReference Include="System.Diagnostics.Tracing" Version="4.3.0" />
+    <PackageReference Include="System.Globalization" Version="4.3.0" />
+    <PackageReference Include="System.Globalization.Calendars" Version="4.3.0" />
+    <PackageReference Include="System.IO" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression" Version="4.3.0" />
+    <PackageReference Include="System.IO.Compression.ZipFile" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem" Version="4.3.0" />
+    <PackageReference Include="System.IO.FileSystem.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Linq" Version="4.3.0" />
+    <PackageReference Include="System.Linq.Expressions" Version="4.3.0" />
+    <PackageReference Include="System.Net.Http" Version="4.3.0" />
+    <PackageReference Include="System.Net.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Net.Sockets" Version="4.3.0" />
+    <PackageReference Include="System.Numerics.Vectors" Version="4.4.0" />
+    <PackageReference Include="System.ObjectModel" Version="4.3.0" />
+    <PackageReference Include="System.Reflection" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Reflection.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Resources.ResourceManager" Version="4.3.0" />
+    <PackageReference Include="System.Runtime" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.CompilerServices.Unsafe" Version="4.4.0" />
+    <PackageReference Include="System.Runtime.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Handles" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.InteropServices" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.InteropServices.RuntimeInformation" Version="4.3.0" />
+    <PackageReference Include="System.Runtime.Numerics" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Algorithms" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Encoding" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.Primitives" Version="4.3.0" />
+    <PackageReference Include="System.Security.Cryptography.X509Certificates" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding" Version="4.3.0" />
+    <PackageReference Include="System.Text.Encoding.Extensions" Version="4.3.0" />
+    <PackageReference Include="System.Text.RegularExpressions" Version="4.3.0" />
+    <PackageReference Include="System.Threading" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Tasks" Version="4.3.0" />
+    <PackageReference Include="System.Threading.Timer" Version="4.3.0" />
+    <PackageReference Include="System.Xml.ReaderWriter" Version="4.3.0" />
+    <PackageReference Include="System.Xml.XDocument" Version="4.3.0" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="StatisticsDisplay.resx">
+      <DependentUpon>StatisticsDisplay.cs</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!--  <Target Name="ILMerge" AfterTargets="AfterBuild">-->
+  <!--    &lt;!&ndash; the ILMergePath property points to the location of ILMerge.exe console application &ndash;&gt;-->
+  <!--    <Exec Command="$(ILMergeConsolePath) /out:bin\Debug\InputDetect.Merged.dll ^&#xD;&#xA;      bin\Debug\InputDetect.dll ^&#xD;&#xA;      bin\Debug\Veldrid.dll ^&#xD;&#xA;      bin\Debug\Veldrid.StartupUtilities.dll ^&#xD;&#xA;      bin\Debug\Veldrid.OpenGLBindings.dll ^&#xD;&#xA;      bin\Debug\Veldrid.MetalBindings.dll ^&#xD;&#xA;      bin\Debug\Veldrid.SDL2.dll ^&#xD;&#xA;      bin\Debug\ImGui.NET.dll ^&#xD;&#xA;      bin\Debug\NativeLibraryLoader.dll ^&#xD;&#xA;      bin\Debug\SharpDX.D3DCompiler.dll ^&#xD;&#xA;      bin\Debug\SharpDX.Direct3D11.dll ^&#xD;&#xA;      bin\Debug\Microsoft.DotNet.PlatformAbstractions.dll ^&#xD;&#xA;      bin\Debug\System.Runtime.CompilerServices.Unsafe.dll ^&#xD;&#xA;      bin\Debug\System.Buffers.dll ^&#xD;&#xA;      bin\Debug\System.Diagnostics.DiagnosticSource.dll ^&#xD;&#xA;      bin\Debug\System.Numerics.Vectors.dll ^&#xD;&#xA;      bin\Debug\Microsoft.Extensions.DependencyModel.dll ^&#xD;&#xA;      bin\Debug\SharpDX.dll ^&#xD;&#xA;      bin\Debug\SharpDX.DXGI.dll ^&#xD;&#xA;      bin\Debug\vk.dll" />-->
+  <!--  </Target>-->
+  <PropertyGroup>
+    <PostBuildEvent>COPY "$(TargetPath)" "D:\Games\Epic\GTAV\scripts"</PostBuildEvent>
+  </PropertyGroup>
+</Project>

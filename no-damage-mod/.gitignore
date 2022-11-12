@@ -1,0 +1,6 @@
+.vs/
+bin/
+obj/
+.idea
+ohko.dll
+ohko.pdb
