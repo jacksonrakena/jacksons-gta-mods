@@ -28,7 +28,6 @@ namespace InputDetect
         public StatisticsDisplayScript()
         {
             _display = new StatisticsDisplay();
-            _display.Opacity = 60;
             
             var keyCol = DataTable.Columns.Add("Key");
             using (System.Drawing.Font font = new System.Drawing.Font(
