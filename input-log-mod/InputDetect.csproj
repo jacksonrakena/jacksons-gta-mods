@@ -2,7 +2,14 @@
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
   <Target Name="AfterBuild">
+    
     <!-- <Exec Command="D:\Code\DarkViperOhko\packages\ILMerge.3.0.29\tools\net452\ILMerge.exe out:ohko.dll bin\Debug\INIFileParser.dll bin\Debug\DarkViperOhko.dll" /> -->
+  </Target>
+  <Target Name="ILMerge" AfterTargets="AfterBuild">
+    <Exec Command="$(ILMergeConsolePath) ^
+      /out:$(OutputPath)InputDetect.Packed.dll ^
+      $(OutputPath)InputDetect.dll ^
+      $(OutputPath)ModCommon.dll" />
   </Target>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
@@ -45,9 +52,6 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
-    <Reference Include="ScriptHookVDotNet3">
-      <HintPath>..\ref\ScriptHookVDotNet3.dll</HintPath>
-    </Reference>
     <Reference Include="ScriptHookVDotNet3, Version=3.0.2.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ref\ScriptHookVDotNet3.dll</HintPath>
@@ -79,6 +83,7 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="ILMerge" Version="3.0.41" />
     <PackageReference Include="Microsoft.NETCore.Platforms" Version="1.1.0" />
     <PackageReference Include="Microsoft.Win32.Primitives" Version="4.3.0" />
     <PackageReference Include="Newtonsoft.Json" Version="9.0.1" />
@@ -145,7 +150,4 @@
   <!--    &lt;!&ndash; the ILMergePath property points to the location of ILMerge.exe console application &ndash;&gt;-->
   <!--    <Exec Command="$(ILMergeConsolePath) /out:bin\Debug\InputDetect.Merged.dll ^&#xD;&#xA;      bin\Debug\InputDetect.dll ^&#xD;&#xA;      bin\Debug\Veldrid.dll ^&#xD;&#xA;      bin\Debug\Veldrid.StartupUtilities.dll ^&#xD;&#xA;      bin\Debug\Veldrid.OpenGLBindings.dll ^&#xD;&#xA;      bin\Debug\Veldrid.MetalBindings.dll ^&#xD;&#xA;      bin\Debug\Veldrid.SDL2.dll ^&#xD;&#xA;      bin\Debug\ImGui.NET.dll ^&#xD;&#xA;      bin\Debug\NativeLibraryLoader.dll ^&#xD;&#xA;      bin\Debug\SharpDX.D3DCompiler.dll ^&#xD;&#xA;      bin\Debug\SharpDX.Direct3D11.dll ^&#xD;&#xA;      bin\Debug\Microsoft.DotNet.PlatformAbstractions.dll ^&#xD;&#xA;      bin\Debug\System.Runtime.CompilerServices.Unsafe.dll ^&#xD;&#xA;      bin\Debug\System.Buffers.dll ^&#xD;&#xA;      bin\Debug\System.Diagnostics.DiagnosticSource.dll ^&#xD;&#xA;      bin\Debug\System.Numerics.Vectors.dll ^&#xD;&#xA;      bin\Debug\Microsoft.Extensions.DependencyModel.dll ^&#xD;&#xA;      bin\Debug\SharpDX.dll ^&#xD;&#xA;      bin\Debug\SharpDX.DXGI.dll ^&#xD;&#xA;      bin\Debug\vk.dll" />-->
   <!--  </Target>-->
-  <PropertyGroup>
-    <PostBuildEvent>COPY "$(TargetPath)" "D:\Games\Epic\GTAV\scripts"</PostBuildEvent>
-  </PropertyGroup>
 </Project>
