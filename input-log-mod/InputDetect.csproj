@@ -45,6 +45,9 @@
     <StartupObject />
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="ScriptHookVDotNet3">
+      <HintPath>..\ref\ScriptHookVDotNet3.dll</HintPath>
+    </Reference>
     <Reference Include="ScriptHookVDotNet3, Version=3.0.2.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>ref\ScriptHookVDotNet3.dll</HintPath>
@@ -130,6 +133,12 @@
     <EmbeddedResource Include="StatisticsDisplay.resx">
       <DependentUpon>StatisticsDisplay.cs</DependentUpon>
     </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\ModCommon.csproj">
+      <Project>{b02043da-b82b-4f05-b8b5-c03f237efd77}</Project>
+      <Name>ModCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!--  <Target Name="ILMerge" AfterTargets="AfterBuild">-->

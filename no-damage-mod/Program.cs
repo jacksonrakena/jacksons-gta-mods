@@ -10,19 +10,24 @@ using GTA.UI;
 using Microsoft.Win32;
 using System.IO;
 using System.Windows.Forms;
+using ModCommon;
 
 namespace DarkViperOhko
 {
     public class OhkoConstants : Script
     {
         public static bool enabled = true;
-        public static IniFile Configuration = new IniFile(Path.Combine(Environment.GetFolderPath(Environment.SpecialFolder.MyDocuments), "ohko_config.ini"));
+        public const string MOD_IDENTIFIER = "ohko";
+        
+        public static readonly ModConfig Configuration = new ModConfig(MOD_IDENTIFIER);
+        public static readonly ModConfigSection Keybinds = Configuration.GetSection("Keybinds");
+        public static readonly ModConfigSection Display = Configuration.GetSection("Display");
 
-        public static Keys IncreaseDeathCount = (Keys) Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "IncreaseDeathCount") ?? "PageUp");
-        public static Keys DecreaseDeathCount = (Keys)Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "DecreaseDeathCount") ?? "PageDown");
-        public static Keys ToggleMod = (Keys)Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "ToggleMod") ?? "F8");
-        public static Keys ToggleDeathCounter = (Keys)Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "ToggleDeathCounter") ?? "F7");
-        public static bool ShowDefaultDeathCounter = bool.Parse(Configuration.IniReadValue("Display", "ShowDefaultDeathCounter") ?? "true");
+        public static readonly Keys IncreaseDeathCount = Keybinds.GetEnum("IncreaseDeathCount", Keys.PageUp);// (Keys) Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "IncreaseDeathCount") ?? "PageUp");
+        public static readonly Keys DecreaseDeathCount = Keybinds.GetEnum("DecreaseDeathCount", Keys.PageDown);//(Keys)Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "DecreaseDeathCount") ?? "PageDown");
+        public static readonly Keys ToggleMod = Keybinds.GetEnum("ToggleMod", Keys.F8); //(Keys)Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "ToggleMod") ?? "F8");
+        public static readonly Keys ToggleDeathCounter = Keybinds.GetEnum("ToggleDeathCounter", Keys.F7);// (Keys)Enum.Parse(typeof(Keys), Configuration.IniReadValue("Keybinds", "ToggleDeathCounter") ?? "F7");
+        public static readonly bool ShowDefaultDeathCounter = Display.GetBoolean("ShowDefaultDeathCounter", true);// bool.Parse(Configuration.IniReadValue("Display", "ShowDefaultDeathCounter") ?? "true");
 
         public static bool RenderDeathCounter = ShowDefaultDeathCounter;
 
@@ -39,6 +44,7 @@ namespace DarkViperOhko
             }
         }
     }
+    
     public class DeathTracker: Script
     {
         public static int deaths;
@@ -169,8 +175,7 @@ namespace DarkViperOhko
 
                     Game.Player.Character.Armor = 0;
                     Game.Player.MaxArmor = 100;
-
-
+                    
                     if (IsTrevor())
                     {
                         Game.Player.IsSpecialAbilityEnabled = false;

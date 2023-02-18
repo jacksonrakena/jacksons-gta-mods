@@ -1,0 +1,11 @@
+D:\Code\jacksons-gta-mods\common\bin\Debug\net48\ModCommon.dll
+D:\Code\jacksons-gta-mods\common\bin\Debug\net48\ModCommon.pdb
+D:\Code\jacksons-gta-mods\common\bin\Debug\net48\ScriptHookVDotNet3.dll
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.csproj.AssemblyReference.cache
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.GeneratedMSBuildEditorConfig.editorconfig
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.AssemblyInfoInputs.cache
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.AssemblyInfo.cs
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.csproj.CoreCompileInputs.cache
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.csproj.CopyComplete
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.dll
+D:\Code\jacksons-gta-mods\common\obj\Debug\net48\ModCommon.pdb

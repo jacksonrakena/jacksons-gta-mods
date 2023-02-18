@@ -1,17 +1,15 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="..\packages\ILMerge.3.0.41\build\ILMerge.props" Condition="Exists('..\packages\ILMerge.3.0.41\build\ILMerge.props')" />
   <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
-  <Target Name="AfterBuild">
-    <Exec Command="D:\Code\DarkViperOhko\packages\ILMerge.3.0.29\tools\net452\ILMerge.exe out:ohko.dll bin\Debug\INIFileParser.dll bin\Debug\DarkViperOhko.dll" />
-  </Target>
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <CopyLocalLockFileAssemblies>true</CopyLocalLockFileAssemblies>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
     <ProjectGuid>{8FC0CEF2-D934-49D4-BC37-AC8EC6AAAE95}</ProjectGuid>
     <OutputType>Library</OutputType>
-    <RootNamespace>DarkViperOhko</RootNamespace>
-    <AssemblyName>DarkViperOhko</AssemblyName>
+    <RootNamespace>NoDamageMod</RootNamespace>
+    <AssemblyName>NoDamageMod</AssemblyName>
     <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -41,6 +39,11 @@
   <PropertyGroup>
     <StartupObject />
   </PropertyGroup>
+  
+  <Target Name="ILMerge" AfterTargets="AfterBuild">
+    <Exec Command="$(ILMergeConsolePath) /out:$(OutputPath)NoDamageMod.Packed.dll $(OutputPath)NoDamageMod.dll $(OutputPath)ModCommon.dll" />
+  </Target>
+  
   <ItemGroup>
     <Reference Include="ScriptHookVDotNet3, Version=3.0.2.0, Culture=neutral, processorArchitecture=AMD64">
       <SpecificVersion>False</SpecificVersion>
@@ -58,17 +61,29 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Ini.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="ohko_config.ini" />
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\common\ModCommon.csproj">
+      <Project>{b02043da-b82b-4f05-b8b5-c03f237efd77}</Project>
+      <Name>ModCommon</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
     <PostBuildEvent>
     </PostBuildEvent>
   </PropertyGroup>
+  <Target Name="EnsureNuGetPackageBuildImports" BeforeTargets="PrepareForBuild">
+    <PropertyGroup>
+      <ErrorText>This project references NuGet package(s) that are missing on this computer. Enable NuGet Package Restore to download them.  For more information, see http://go.microsoft.com/fwlink/?LinkID=322105.The missing file is {0}.</ErrorText>
+    </PropertyGroup>
+    <Error Condition="!Exists('..\packages\ILMerge.3.0.41\build\ILMerge.props')" Text="$([System.String]::Format('$(ErrorText)', '..\packages\ILMerge.3.0.41\build\ILMerge.props'))" />
+  </Target>
 </Project>

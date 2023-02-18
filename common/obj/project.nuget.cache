@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "zqck3ubp/UIBNLkNB4q42fZJxZOg99cPNx38vtDpX6Bz70oGrfITwHBU2LnXg1sXOwafkyzArJI6Cbexr8Yxaw==",
+  "dgSpecHash": "nuPZLyypEgjjdKqGQVL7YqDkuMqN2NW/pNu3C7NZJuolJYXQDc9crmh9hDhNemZxoVglAlXh2UfpFVg/tnkgjw==",
   "success": true,
-  "projectFilePath": "D:\\Code\\gta5-no-damage-mod\\common\\ModCommon.csproj",
+  "projectFilePath": "D:\\Code\\jacksons-gta-mods\\common\\ModCommon.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }
