@@ -1,0 +1,19 @@
+Abyssal's One-Hit Knock Out
+Version 3.0 "The Return of the Jedi" - Feburary 18th, 2023
+
+==
+
+REQUIRES SCRIPT HOOK V AND SCRIPTHOOKVDOTNET.
+TESTED AGAINST PATCH 1.66 FOR EPIC GAMES LAUNCHER - SHOULD WORK ON EVERYTHING ELSE.
+
+1) Copy "ohko_config.ini" to your Documents folder and open it.
+2) Adjust the keybinds as you see fit. To disable the built-in death counter, set ShowDefaultDeathCounter to False.
+3) Copy "NoDamageMod.Packed.dll" to the "scripts" folder of your GTA directory.
+4) Open the game, and voila! Toggle the mod using the ToggleMod keybind.
+
+Copying the configuration is no longer necessary, and the game will load these defaults:
+
+Increase death counter: PageUp
+Decrease death counter: PageDown
+Toggle the on-screen death counter: F7
+Toggle the no-damage system: F8
