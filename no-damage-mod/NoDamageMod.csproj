@@ -41,16 +41,12 @@
   </PropertyGroup>
   
   <Target Name="ILMerge" AfterTargets="AfterBuild">
-    <Exec Command="$(ILMergeConsolePath) ^
-      /out:$(OutputPath)NoDamageMod.Packed.dll ^
-      $(OutputPath)NoDamageMod.dll ^
-      $(OutputPath)ModCommon.dll" />
+    <Exec Command="$(ILMergeConsolePath) ^&#xA;      /out:$(OutputPath)NoDamageMod.Packed.dll ^&#xA;      $(OutputPath)NoDamageMod.dll ^&#xA;      $(OutputPath)ModCommon.dll" />
   </Target>
   
   <ItemGroup>
-    <Reference Include="ScriptHookVDotNet3, Version=3.0.2.0, Culture=neutral, processorArchitecture=AMD64">
-      <SpecificVersion>False</SpecificVersion>
-      <HintPath>ref\ScriptHookVDotNet3.dll</HintPath>
+    <Reference Include="ScriptHookVDotNet3">
+      <HintPath>..\ref\ScriptHookVDotNet3.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Core" />
